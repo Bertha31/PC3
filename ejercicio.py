@@ -1,29 +1,24 @@
-class RECTANGULO:
-    def __init__(self, largo, ancho):
-        if self.largo>=0 and self.ancho>=0:
-            self.largo = largo
-            self.ancho = ancho
-        
-    def calcular_area(self):
-        area_rectangulo = self.largo * self.ancho
-        return area_rectangulo
-while True:
-    try:
-        largo_rectangulo = float(input("Ingrese largo: "))
-        if largo_rectangulo>=0:
-            pass
-        else:
-            print ("Error. El largo debe ser positivo")
-    except ValueError:
-        print("Error de digitación")     
+def obtener_calificaciones():
+    while True:
+        try:
+            # Solicitar al usuario una lista de calificaciones separadas por comas
+            entrada = input("Ingrese las calificaciones separadas por comas: ")
+            
+            # Dividir la cadena en calificaciones individuales
+            calificaciones = entrada.split(',')
+            
+            # Inicializar una lista vacía para almacenar las calificaciones como enteros
+            calificaciones_enteros = []
+            
+            # Convertir cada calificación en un entero y almacenarla en la lista
+            for calificacion in calificaciones:
+                calificacion_entero = int(calificacion.strip())
+                calificaciones_enteros.append(calificacion_entero)
+            
+            return calificaciones_enteros
+        except ValueError:
+            print("Error: Ingrese calificaciones válidas separadas por comas.")
 
-    try:
-        ancho_rectangulo = float(input("Ingrese ancho: "))
-        if ancho_rectangulo>=0:
-            area = RECTANGULO(largo_rectangulo,ancho_rectangulo).calcular_area()
-            print(f"El área del círculo es: {area}")
-            break 
-        else:
-            print ("Error. El largo debe ser positivo") 
-    except ValueError:
-        print("Error de digitación")    
+if __name__ == "__main__":
+    calificaciones = obtener_calificaciones()
+    print("Calificaciones ingresadas:", calificaciones)
