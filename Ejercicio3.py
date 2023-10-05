@@ -1,12 +1,18 @@
 class CIRCULO:
-    def __int__ (self,radio)-> None:
+    def __init__(self, radio):
         self.radio = radio
-        pass
     def calcular_area(self):
-        if self.radio >= 0:
-            return 3.16*self.radio**2
-        else:
-            return "El radio está mal digitado"
+        area_circulo = 3.16 * self.radio**2
+        return area_circulo
 
-numero_radio = float(input("Ingrese el radio: "))
-print(calcular_area)   
+while True:
+    try:
+        radio_del_circulo = float(input("Ingrese radio: "))
+        if radio_del_circulo>=0:
+            area = CIRCULO(radio_del_circulo).calcular_area()
+            print(f"El área del círculo es: {area}")
+            break
+        else:
+            print ("Error. El radio debe ser positivo")
+    except ValueError:
+        print("Error de digitación")
