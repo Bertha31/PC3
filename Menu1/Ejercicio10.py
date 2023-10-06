@@ -8,7 +8,6 @@ Crear un programa Menu que contenga las siguientes funcionalidades:
 
 from pprint import pprint
 
-}
 from utils import ingreso_datos as ing
 from utils.circulo import calcular_area_circulo
 from utils.rectangulo import calcular_area_rectangulo
@@ -29,21 +28,29 @@ Escribe una opción: """
 # 3. Funciones y /o metodos
 
 def opcion1():
-    x = ing.ingreso_numero_decimal('Ingrese el primeor número: ')
-    calcular_circulo= calcular_area_circulo(x)
-    print(f"El área del circulo es: {calcular_circulo}")
+    while True:
+        try:
+            radio = float(input("Ingrese radio: "))
+            if radio >=0:
+                area = calcular_area_circulo()
+                print(f"El área del círculo es: {area}")
+                break
+            else:
+                print ("Error. El radio debe ser positivo")
+        except ValueError:
+            print("Error de digitación")
 
-
+    
 def opcion2():
-    x = ing.ingreso_numero_decimal('Ingrese el primeor número: ')
-    y = ing.ingreso_numero_decimal('Ingrese el segundo número: ')
-    calcular_rectangulo = calcular_area_rectangulo(x,y)
+    largo = ing.ingreso_numero_decimal('Ingrese el largo: ')
+    ancho = ing.ingreso_numero_decimal('Ingrese el ancho: ')
+    calcular_rectangulo = calcular_area_rectangulo(largo,ancho)
     print(f"El área del rectangulo es: {calcular_rectangulo}")
 
 
 def opcion3():
-    x = ing.ingreso_numero_decimal('Ingrese el primeor número: ')
-    calcular_cuadrado = calcular_area_cuadrado(x)
+    lado = ing.ingreso_numero_decimal('Ingrese el lado del cuadrado: ')
+    calcular_cuadrado = calcular_area_cuadrado(lado)
     print(f"El área del cuadrado es: {calcular_cuadrado}")
 
 
