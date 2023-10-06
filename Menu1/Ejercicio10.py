@@ -1,10 +1,3 @@
-"""
-Crear un programa Menu que contenga las siguientes funcionalidades:
-1. Calcular el área de un circulo
-2. Calcular el área de un rectangulo
-3. Calcular el área de un cuadrado
-4. Salir
-"""
 
 from pprint import pprint
 
@@ -13,7 +6,6 @@ from utils.circulo import calcular_area_circulo
 from utils.rectangulo import calcular_area_rectangulo
 from utils.cuadrado import calcular_area_cuadrado
 
-# 2. Constantes
 MENSAJE_BIENVENIDA = "Bienvenido al menú interactivo"
 OPCIONES_MENU = """
 ¿Qué quieres hacer? 
@@ -25,33 +17,38 @@ OPCIONES_MENU = """
 Escribe una opción: """
 
 
-# 3. Funciones y /o metodos
-
 def opcion1():
     while True:
-        try:
-            radio = float(input("Ingrese radio: "))
-            if radio >=0:
-                area = calcular_area_circulo()
-                print(f"El área del círculo es: {area}")
-                break
-            else:
-                print ("Error. El radio debe ser positivo")
-        except ValueError:
-            print("Error de digitación")
+        radio = ing.ingreso_numero_decimal("Ingrese radio: ")
+        if radio >=0:
+            area = calcular_area_circulo(radio)
+            print(f"El área del círculo es: {area}")
+            break
+        else:
+            print ("Error. El radio debe ser positivo")
+
 
     
 def opcion2():
-    largo = ing.ingreso_numero_decimal('Ingrese el largo: ')
-    ancho = ing.ingreso_numero_decimal('Ingrese el ancho: ')
-    calcular_rectangulo = calcular_area_rectangulo(largo,ancho)
-    print(f"El área del rectangulo es: {calcular_rectangulo}")
-
+    while True:
+        largo = ing.ingreso_numero_decimal("Ingresa el largo del rectángulo: ")
+        ancho = ing.ingreso_numero_decimal("Ingresa el ancho del rectángulo: ")
+        if largo < 0 or ancho < 0:
+            print("El largo y el ancho deben ser valores positivos. Por favor, inténtalo nuevamente.")
+        else:
+            break
+    area = calcular_area_rectangulo(largo,ancho)
+    print(f"El área del rectángulo es: {area}")
 
 def opcion3():
-    lado = ing.ingreso_numero_decimal('Ingrese el lado del cuadrado: ')
-    calcular_cuadrado = calcular_area_cuadrado(lado)
-    print(f"El área del cuadrado es: {calcular_cuadrado}")
+    while True:
+        lado = ing.ingreso_numero_decimal("Ingrese el lado del cuadrado: ")
+        if lado >=0:
+            area = calcular_area_cuadrado(lado)
+            print(f"El área del cuadrado es: {area}")
+            break
+        else:
+            print ("Error. El lado debe ser positivo")
 
 
 def main():
