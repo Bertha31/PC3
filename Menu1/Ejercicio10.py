@@ -6,11 +6,9 @@ Crear un programa Menu que contenga las siguientes funcionalidades:
 4. Salir
 """
 
-# 1. Librerias
 from pprint import pprint
 
-
-# 1.2 librerias creadas
+}
 from utils import ingreso_datos as ing
 from utils.circulo import calcular_area_circulo
 from utils.rectangulo import calcular_area_rectangulo
@@ -33,20 +31,20 @@ Escribe una opción: """
 def opcion1():
     x = ing.ingreso_numero_decimal('Ingrese el primeor número: ')
     calcular_circulo= calcular_area_circulo(x)
-    print(calcular_circulo)
+    print(f"El área del circulo es: {calcular_circulo}")
 
 
 def opcion2():
     x = ing.ingreso_numero_decimal('Ingrese el primeor número: ')
     y = ing.ingreso_numero_decimal('Ingrese el segundo número: ')
     calcular_rectangulo = calcular_area_rectangulo(x,y)
-    print(calcular_rectangulo)
+    print(f"El área del rectangulo es: {calcular_rectangulo}")
 
 
 def opcion3():
     x = ing.ingreso_numero_decimal('Ingrese el primeor número: ')
     calcular_cuadrado = calcular_area_cuadrado(x)
-    print(calcular_cuadrado)
+    print(f"El área del cuadrado es: {calcular_cuadrado}")
 
 
 def main():
