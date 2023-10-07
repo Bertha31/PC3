@@ -49,9 +49,14 @@ class Rectangulo:
     def area(self):
         return self.base() * self.altura()
 
-# Ejemplo de uso:
-p1 = Punto(2, 3)
-p2 = Punto(5, 7)
+punto1_1= float(input("Ingrese el valor de x del Punto 1: "))
+punto1_2= float(input("Ingrese el valor de y del Punto 1: "))
+
+punto2_1= float(input("Ingrese el valor de x del Punto 2: "))
+punto2_2= float(input("Ingrese el valor de y del Punto 2: "))
+
+p1 = Punto(punto1_1, punto1_2)
+p2 = Punto(punto2_1,punto2_2)
 rectangulo = Rectangulo(p1, p2)
 
 print("Punto 1:", p1)
