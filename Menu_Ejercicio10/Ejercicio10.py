@@ -1,5 +1,4 @@
 
-from pprint import pprint
 
 from utils import ingreso_datos as ing
 from utils.circulo import calcular_area_circulo
@@ -62,10 +61,10 @@ def main():
         elif opcion == '3':
             opcion3()
         elif opcion == '4':
-            print("¡Hasta luego! Ha sido un placer ayudarte")
+            print("¡Hasta luego!")
             break
         else:
-            print("Comando desconocido, vuelve a intentarlo")
+            print("Vuelve a intentarlo, dígito erróneo")
     pass
 
 if __name__ == '__main__':
