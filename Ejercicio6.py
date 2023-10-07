@@ -41,9 +41,9 @@ class Catalogo:
 if __name__ == "__main__":
     catalogo = Catalogo()
 
-    producto1 = Producto("001", "Filtro de aceite", 15.99, 2022)
-    producto2 = Producto("002", "Batería", 79.99, 2023)
-    producto3 = Producto("003", "Pastillas de freno", 29.99, 2022)
+    producto1 = Producto("C01", "Bateria", 85.99, 2018)
+    producto2 = Producto("C02", "Fusibles", 39.99, 2020)
+    producto3 = Producto("C03", "Chasis", 79.99, 2021)
 
     catalogo.agregar(producto1)
     catalogo.agregar(producto2)
